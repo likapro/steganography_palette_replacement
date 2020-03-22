@@ -102,7 +102,7 @@ namespace palette_replacement
             {
                 for (int j = 0; j < imgMatrix.GetLength(1); j++)
                 {
-                    int[] b = dec2bin(imgMatrix[i, j]);
+                    int[] b = Dec2bin(imgMatrix[i, j]);
                     Array.Copy(b, 0, binImg, k * 8, 8);
                     k++;
                 }
@@ -126,12 +126,24 @@ namespace palette_replacement
 
             for (int j = 0; j < decStr.Length; j++)
             {
-                int[] b = dec2bin(decStr[j]);
+                int[] b = Dec2bin(decStr[j]);
                 Array.Copy(b, 0, binStr, k * 8, 8);
                 k++;
             }
 
             return binStr;
+        }
+
+        private static int[] Dec2bin(int v)
+        {            
+            string bin = Convert.ToString(v, 2);
+            var res = new List<int>();
+            foreach (var el in bin)
+            {
+                res.Add(Convert.ToInt32(el));
+            }
+
+            return res.ToArray();
         }
 
         // Шаг 11. Если размер встраиваемой информации не превышает допустимого значения, производим встраивание, которое осуществляется с помощью функции embed(). Данная функция преобразует отсортированную
@@ -254,6 +266,25 @@ namespace palette_replacement
             return watermark;
         }
 
+        public static int FindIndexOfArr(int[] array, int[] subArray)
+        {
+            int index = -1;
+            for (int i = 0; i < array.Length - subArray.Length + 1; i++)
+            {
+                index = i;
+                for (int j = 0; j < subArray.Length; j++)
+                {
+                    if (array[i + j] != subArray[j])
+                    {
+                        index = -1;
+                        break;
+                    }
+                }
+                if (index >= 0)
+                    return index;
+            }
+            return -1;
+        }
 
         private static void WriteRed(int[,] redMtrx, Bitmap img)
         {
@@ -308,10 +339,10 @@ namespace palette_replacement
         static void Main(string[] args)
         {
             // Загружаем используемый контейнер в переменную типа Bitmap:
-            var img = new Bitmap("C.bmp");
+            var img = new Bitmap(@"C:\Users\Likapr0\Desktop\C.bmp");
 
             // Шаг 2.Загружаем ЦВЗ в переменную типа Bitmap:
-            var watermark = new Bitmap("qr.bmp");
+            var watermark = new Bitmap(@"C:\Users\Likapr0\Desktop\qr.bmp");
 
             // Шаг 3.Для корректного извлечения ЦВЗ введем в рассмотрение специальную переменную, которая будет встраиваться в контейнер вместе с
             // ЦВЗ и указывать на место окончания последовательности встроенных бит в контейнере:
@@ -349,7 +380,7 @@ namespace palette_replacement
             newImg = WriteBlue(stegoCont, newImg);
 
             //Шаг 13. Создадим новый файл C2.bmp, в который запишем новый Bitmap:
-            newImg.Save("C2.bmp", ImageFormat.Bmp);
+            newImg.Save(@"C:\Users\Likapr0\Desktop\C2.bmp", ImageFormat.Bmp);
 
 
             // ================================
@@ -357,9 +388,9 @@ namespace palette_replacement
             // ================================
 
             // Шаг 1.Для извлечения ЦВЗ в методе замены палитры требуется наличие исходного изображения, поскольку необходимо учитывать индексы в
-            //палитре исходной матрицы интенсивности. С этой целью вначале загружаем исходное изображение, а затем изображение со встроенным ЦВЗ:
-            Bitmap imgOld = new Bitmap("C.bmp");
-            Bitmap imgNew = new Bitmap("C2.bmp");
+            // палитре исходной матрицы интенсивности. С этой целью вначале загружаем исходное изображение, а затем изображение со встроенным ЦВЗ:
+            Bitmap imgOld = new Bitmap(@"C:\Users\Likapr0\Desktop\C.bmp");
+            Bitmap imgNew = new Bitmap(@"C:\Users\Likapr0\Desktop\C2.bmp");
 
             // Теперь возьмём матрицы интенсивностей синей составляющей этих изображений:
             int[,] blueMatrixOld = ReadBlue(imgOld);
@@ -367,13 +398,13 @@ namespace palette_replacement
             int[] watermark2 = Extract(blueMatrixOld, blueMatrixNew, terminator);
             
             // Шаг 3.Создадим новый Bitmap и запишем в его матрицы красного, зелёного и синего полученный двумерный массив:
-            var wm = new Bitmap(wmMatr.GetLength(0), wmMatr.GetLength(0));
-            WriteBlue(wmMatr, wm);
-            WriteRed(wmMatr, wm);
-            WriteGreen(wmMatr, wm);
+            var wm = new Bitmap(wmArr.GetLength(0), wmArr.GetLength(0));
+            WriteBlue(wmArr, wm);
+            WriteRed(wmArr, wm);
+            WriteGreen(wmArr, wm);
                         
             //Шаг 4. Создадим новый файл qr2.bmp, в который запишем полученный Bitmap.
-            wm.Save("qr2.bmp", ImageFormat.Bmp);
+            wm.Save(@"C:\Users\Likapr0\Desktop\qr2.bmp", ImageFormat.Bmp);
 
         }
     }
