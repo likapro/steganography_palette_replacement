@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3D7E18B6-4643-4B0C-90B7-1D743357D2DE}</ProjectGuid>
+    <ProjectGuid>{2ED22F22-6FA7-4975-A27A-70295E14693A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>palette_replacement</RootNamespace>
-    <AssemblyName>palette_replacement</AssemblyName>
+    <RootNamespace>replacing_the_palette</RootNamespace>
+    <AssemblyName>replacing_the_palette</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("palette_replacement")]
+[assembly: AssemblyTitle("replacing_the_palette")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("palette_replacement")]
+[assembly: AssemblyProduct("replacing_the_palette")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("3d7e18b6-4643-4b0c-90b7-1d743357d2de")]
+[assembly: Guid("2ed22f22-6fa7-4975-a27a-70295e14693a")]
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //

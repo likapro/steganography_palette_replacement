@@ -1,0 +1,7 @@
+C:\Users\Likapr0\Documents\8 семестр\replacing_the_palette\replacing_the_palette\bin\Debug\replacing_the_palette.exe.config
+C:\Users\Likapr0\Documents\8 семестр\replacing_the_palette\replacing_the_palette\bin\Debug\replacing_the_palette.exe
+C:\Users\Likapr0\Documents\8 семестр\replacing_the_palette\replacing_the_palette\bin\Debug\replacing_the_palette.pdb
+C:\Users\Likapr0\Documents\8 семестр\replacing_the_palette\replacing_the_palette\obj\Debug\replacing_the_palette.csproj.CoreCompileInputs.cache
+C:\Users\Likapr0\Documents\8 семестр\replacing_the_palette\replacing_the_palette\obj\Debug\replacing_the_palette.exe
+C:\Users\Likapr0\Documents\8 семестр\replacing_the_palette\replacing_the_palette\obj\Debug\replacing_the_palette.pdb
+C:\Users\Likapr0\Documents\8 семестр\replacing_the_palette\replacing_the_palette\obj\Debug\replacing_the_palette.csprojAssemblyReference.cache

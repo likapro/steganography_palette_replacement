@@ -1,7 +1,0 @@
-C:\projects\steganography_palette_replacement\palette_replacement\palette_replacement\bin\Debug\palette_replacement.exe.config
-C:\projects\steganography_palette_replacement\palette_replacement\palette_replacement\bin\Debug\palette_replacement.exe
-C:\projects\steganography_palette_replacement\palette_replacement\palette_replacement\bin\Debug\palette_replacement.pdb
-C:\projects\steganography_palette_replacement\palette_replacement\palette_replacement\obj\Debug\palette_replacement.csprojAssemblyReference.cache
-C:\projects\steganography_palette_replacement\palette_replacement\palette_replacement\obj\Debug\palette_replacement.csproj.CoreCompileInputs.cache
-C:\projects\steganography_palette_replacement\palette_replacement\palette_replacement\obj\Debug\palette_replacement.exe
-C:\projects\steganography_palette_replacement\palette_replacement\palette_replacement\obj\Debug\palette_replacement.pdb
